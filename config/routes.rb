@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
-  # devise_for :accounts
+  devise_for :accounts
 	# root to: "home#index"
-  resources :accounts, only: [:index]
+  resources :accounts, only: [:index, :create]
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
