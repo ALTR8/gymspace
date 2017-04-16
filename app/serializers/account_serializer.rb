@@ -1,7 +1,4 @@
 class AccountSerializer < ActiveModel::Serializer
-  attributes :id, :email, :testattribute
+  attributes :id, :email
 
-  def testattribute
-    return 1+1
-  end
 end

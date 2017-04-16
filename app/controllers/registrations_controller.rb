@@ -9,7 +9,7 @@ class RegistrationsController < Devise::RegistrationsController
     if @account.save
       render json: @account
     else
-      render plain: @account.errors.full_messages, status: 401
+      render plain: @account.errors.full_messages, status: 201
     end
   end
 end
