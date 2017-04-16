@@ -1,7 +1,15 @@
 class RegistrationsController < Devise::RegistrationsController
-  skip_before_action :verify_authenticity_token
+
+  def new
+    super
+  end
 
   def create
-    super
+    @account=Account.new(email: params[:email], password: params[:password])
+    if @account.save
+      render json: @account
+    else
+      render plain: @account.errors.full_messages, status: 401
+    end
   end
 end
